@@ -1,0 +1,354 @@
+/* ===== ANIMATIONS CSS ===== */
+/* This file contains all custom animations for TanatradingLabs website */
+
+/* Floating animation */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-float-fast {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Pulse animation */
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  /* Glowing animation */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px rgba(124, 58, 237, 0.5),
+                  0 0 10px rgba(124, 58, 237, 0.3);
+    }
+    to {
+      box-shadow: 0 0 10px rgba(124, 58, 237, 0.8),
+                  0 0 20px rgba(124, 58, 237, 0.5),
+                  0 0 30px rgba(124, 58, 237, 0.3);
+    }
+  }
+  
+  /* Text glow animation */
+  .animate-text-glow {
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes textGlow {
+    from {
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.5),
+                   0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    to {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                   0 0 20px rgba(0, 255, 255, 0.5),
+                   0 0 30px rgba(0, 255, 255, 0.3);
+    }
+  }
+  
+  /* Gradual reveal animation */
+  .animate-reveal {
+    animation: reveal 1s ease-in-out forwards;
+  }
+  
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Rotating animation */
+  .animate-rotate {
+    animation: rotate 20s linear infinite;
+  }
+  
+  .animate-rotate-slow {
+    animation: rotate 30s linear infinite;
+  }
+  
+  .animate-rotate-reverse {
+    animation: rotate 20s linear infinite reverse;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Orbit animation */
+  .animate-orbit {
+    animation: orbit 20s linear infinite;
+  }
+  
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+  
+  /* Typing effect */
+  .animate-typing {
+    overflow: hidden;
+    border-right: 0.15em solid rgba(124, 58, 237, 0.8);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(124, 58, 237, 0.8) }
+  }
+  
+  /* Futuristic scanner animation */
+  .animate-scanner {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animate-scanner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    animation: scan 3s ease-in-out infinite;
+  }
+  
+  @keyframes scan {
+    0% {
+      transform: rotate(45deg) translateY(-100%);
+    }
+    100% {
+      transform: rotate(45deg) translateY(100%);
+    }
+  }
+  
+  /* Fade-in-up animation for page sections */
+  .animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Staggered animations for lists and grids */
+  .stagger-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .stagger-animation > *:nth-child(1) { animation: staggerFade 0.5s ease-out 0.1s forwards; }
+  .stagger-animation > *:nth-child(2) { animation: staggerFade 0.5s ease-out 0.2s forwards; }
+  .stagger-animation > *:nth-child(3) { animation: staggerFade 0.5s ease-out 0.3s forwards; }
+  .stagger-animation > *:nth-child(4) { animation: staggerFade 0.5s ease-out 0.4s forwards; }
+  .stagger-animation > *:nth-child(5) { animation: staggerFade 0.5s ease-out 0.5s forwards; }
+  .stagger-animation > *:nth-child(6) { animation: staggerFade 0.5s ease-out 0.6s forwards; }
+  .stagger-animation > *:nth-child(7) { animation: staggerFade 0.5s ease-out 0.7s forwards; }
+  .stagger-animation > *:nth-child(8) { animation: staggerFade 0.5s ease-out 0.8s forwards; }
+  .stagger-animation > *:nth-child(9) { animation: staggerFade 0.5s ease-out 0.9s forwards; }
+  .stagger-animation > *:nth-child(10) { animation: staggerFade 0.5s ease-out 1s forwards; }
+  
+  @keyframes staggerFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Glowing border animation */
+  .animate-border-glow {
+    position: relative;
+  }
+  
+  .animate-border-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: linear-gradient(
+      45deg,
+      rgba(124, 58, 237, 0.8),
+      rgba(0, 255, 255, 0.8),
+      rgba(255, 79, 129, 0.8)
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderRotate 4s linear infinite;
+  }
+  
+  @keyframes borderRotate {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 130% 50%;
+    }
+  }
+  
+  /* Data stream animation - for trading/crypto visualizations */
+  .animate-data-stream {
+    background: linear-gradient(90deg, 
+      rgba(0, 0, 0, 0) 0%, 
+      rgba(124, 58, 237, 0.2) 20%, 
+      rgba(124, 58, 237, 0.4) 40%, 
+      rgba(0, 255, 255, 0.4) 60%, 
+      rgba(0, 255, 255, 0.2) 80%, 
+      rgba(0, 0, 0, 0) 100%);
+    background-size: 200% 100%;
+    animation: dataStream 5s linear infinite;
+  }
+  
+  @keyframes dataStream {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  
+  /* Number count animation */
+  .animate-number-count {
+    animation: numberCount 2s ease-out forwards;
+    counter-reset: num var(--num-start);
+  }
+  
+  .animate-number-count::after {
+    content: counter(num);
+    animation: numberCountAfter 2s linear forwards;
+  }
+  
+  @keyframes numberCountAfter {
+    from {
+      counter-increment: num var(--num-start);
+    }
+    to {
+      counter-increment: num var(--num-end);
+    }
+  }
+  
+  /* Scale-in animation */
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+    transform-origin: center;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  
+  @keyframes scaleIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Tech pattern animation - for background elements */
+  .animate-tech-pattern {
+    background-image: 
+      radial-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+      radial-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    animation: techPattern 10s linear infinite;
+  }
+  
+  @keyframes techPattern {
+    from {
+      background-position: 0 0, 25px 25px;
+    }
+    to {
+      background-position: 50px 0, 75px 25px;
+    }
+  }
+  
+  /* Media query to respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-slow,
+    .animate-float-fast,
+    .animate-pulse-slow,
+    .animate-glow,
+    .animate-text-glow,
+    .animate-reveal,
+    .animate-rotate,
+    .animate-rotate-slow,
+    .animate-rotate-reverse,
+    .animate-orbit,
+    .animate-typing,
+    .animate-scanner,
+    .animate-fade-in-up,
+    .stagger-animation > *,
+    .animate-border-glow::before,
+    .animate-data-stream,
+    .animate-number-count::after,
+    .animate-scale-in,
+    .animate-tech-pattern {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
